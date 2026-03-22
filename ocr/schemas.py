@@ -51,3 +51,31 @@ class OCRBatchResult:
             "full_text": self.full_text,
             "page_results": [page.to_dict() for page in self.page_results],
         }
+
+
+@dataclass(slots=True)
+class SealPageResult:
+    document_id: str
+    page_number: int
+    provider: str
+    source_name: str
+    raw_response: dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(slots=True)
+class SealBatchResult:
+    document_id: str
+    provider: str
+    total_pages: int = 0
+    page_results: list[SealPageResult] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "document_id": self.document_id,
+            "provider": self.provider,
+            "total_pages": self.total_pages,
+            "page_results": [page.to_dict() for page in self.page_results],
+        }

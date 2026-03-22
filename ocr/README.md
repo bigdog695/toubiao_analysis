@@ -32,6 +32,15 @@ The function returns a normalized dictionary containing:
 - `full_text`
 - `page_results`
 
+Official seal OCR uses a separate market API client:
+
+```python
+from ocr import detect_official_seals, recognize_official_seal_file
+
+result = recognize_official_seal_file("seal.png")
+pdf_result = detect_official_seals("qualification.pdf")
+```
+
 ## Expected Input
 
 The current implementation accepts one document per call.
@@ -94,3 +103,6 @@ python -m ocr.selftest --file path/to/file.pdf --json > ocr_result.json
 - The API supports PNG, JPG, JPEG, BMP, GIF, TIFF, WebP, and PDF.
 - The request size limit is 10MB per file according to the official API documentation.
 - Oversized PDFs are rendered to page images automatically before OCR.
+- Official seal OCR is wired separately through the Aliyun market API at `stamp.market.alicloudapi.com`.
+- The market seal API uses digest signing with `AppKey` and `AppSecret`, not AccessKey ID/Secret.
+- Seal OCR for PDFs works as: `PDF -> page images -> seal detection per page -> aggregated JSON result`.

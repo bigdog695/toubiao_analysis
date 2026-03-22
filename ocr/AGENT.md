@@ -18,6 +18,8 @@ This folder is responsible for turning scanned or image-based PDF content into n
 - Normalize OCR output into clean text plus structured metadata
 - Preserve page-level and block-level traceability
 - Avoid leaking raw documents outside approved boundaries
+- Support specialized OCR providers when the use case is document-type specific, such as official seal OCR
+- For seal OCR on PDFs, split by page, render to images, then detect seals page by page
 
 ## Required Output Contract
 
