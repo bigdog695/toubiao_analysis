@@ -1,2 +1,9 @@
 *.pdf
 *.docx
+.env
+*.env
+__pycache__/
+*.pyc
+ocr/tests/.tmp/
+*.ocr.json
+ocr/test_ocr_result.json
