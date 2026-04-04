@@ -33,6 +33,7 @@ def render_score_item(item):
 
 
 def main():
+    # scoring_engine.main() # waiting for Kai's code
     bid_demo_data = {
         "bid_file_name": "【待补充：投标文件名称】",
         "bidder_name": "【待补充：投标单位名称】",
