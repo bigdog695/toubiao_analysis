@@ -9,3 +9,7 @@ ocr/tests/.tmp/
 *.seal.json
 ocr/test_ocr_result.json
 .vscode/
+tmp*
+output*.png
+output*.jpg
+output*.jpeg
