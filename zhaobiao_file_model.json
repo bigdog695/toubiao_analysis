@@ -1,0 +1,1051 @@
+{
+  "schema_version": "1.0.0",
+  "document_type": "tender_rule_model",
+  "source": {
+    "file_name": "招标文件正文.pdf",
+    "chapters_used": [
+      "第二章 投标人须知",
+      "第三章 评标办法",
+      "第八章 投标文件格式"
+    ]
+  },
+  "project": {
+    "project_id": "E341500001002145001",
+    "project_name": "六安经济技术开发区北片市政排水工程——盛唐路（迎宾大道-银雀路）道路及排水等配套工程",
+    "project_type": "municipal_infrastructure_construction",
+    "evaluation_method": "comprehensive_evaluation",
+    "planned_duration_days": 240,
+    "quality_requirement": "qualified",
+    "max_bid_price_cny": 18332761.47,
+    "bid_validity_days": 60,
+    "joint_venture_allowed": true,
+    "joint_venture_member_limit": 2
+  },
+  "submission_model": {
+    "file_buckets": [
+      {
+        "bucket_code": "business_file",
+        "bucket_name": "商务文件",
+        "required": true
+      },
+      {
+        "bucket_code": "price_file",
+        "bucket_name": "报价文件",
+        "required": true
+      },
+      {
+        "bucket_code": "technical_file",
+        "bucket_name": "技术文件",
+        "required": true
+      }
+    ],
+    "required_sections": [
+      {
+        "section_code": "legal_auth",
+        "section_name": "法定代表人身份证明或授权委托书",
+        "bucket_code": "business_file",
+        "required": true,
+        "validation_type": "presence_check"
+      },
+      {
+        "section_code": "project_org",
+        "section_name": "项目管理机构",
+        "bucket_code": "business_file",
+        "required": true,
+        "validation_type": "presence_check"
+      },
+      {
+        "section_code": "qualification_docs",
+        "section_name": "资格审查资料",
+        "bucket_code": "business_file",
+        "required": true,
+        "validation_type": "presence_check"
+      },
+      {
+        "section_code": "business_scoring_docs",
+        "section_name": "商务文件详细评审资料",
+        "bucket_code": "business_file",
+        "required": true,
+        "validation_type": "presence_check"
+      },
+      {
+        "section_code": "construction_plan",
+        "section_name": "施工组织设计",
+        "bucket_code": "technical_file",
+        "required": true,
+        "validation_type": "presence_check"
+      }
+    ]
+  },
+  "qualification_rules": [
+    {
+      "rule_id": "qual_enterprise_license",
+      "rule_name": "营业执照存在性",
+      "entity_scope": "bidder",
+      "required": true,
+      "validation_type": "presence_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "business_license"
+      ],
+      "required_doc_names": [
+        "营业执照"
+      ],
+      "pass_condition": "business_license exists",
+      "fail_condition": "business_license missing",
+      "output_fields": [
+        "doc_found",
+        "matched_doc_name",
+        "confidence"
+      ]
+    },
+    {
+      "rule_id": "qual_enterprise_grade",
+      "rule_name": "企业资质等级",
+      "entity_scope": "bidder",
+      "required": true,
+      "validation_type": "entity_attribute_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "enterprise_qualification_certificate"
+      ],
+      "required_doc_names": [
+        "市政公用工程施工总承包三级及以上资质证书"
+      ],
+      "extraction_targets": [
+        "qualification_category",
+        "qualification_level",
+        "issuing_authority",
+        "validity_status"
+      ],
+      "pass_condition": "qualification_category == 市政公用工程施工总承包 AND qualification_level >= 三级 AND validity_status == valid",
+      "fail_condition": "category mismatch OR level below threshold OR invalid",
+      "output_fields": [
+        "qualification_category",
+        "qualification_level",
+        "is_valid",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_safety_production_license",
+      "rule_name": "安全生产许可证",
+      "entity_scope": "bidder",
+      "required": true,
+      "validation_type": "certificate_validity_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "safety_production_license"
+      ],
+      "required_doc_names": [
+        "安全生产许可证"
+      ],
+      "extraction_targets": [
+        "certificate_name",
+        "certificate_no",
+        "validity_status",
+        "expiry_date"
+      ],
+      "pass_condition": "certificate exists AND validity_status == valid",
+      "fail_condition": "certificate missing OR invalid",
+      "output_fields": [
+        "certificate_no",
+        "expiry_date",
+        "is_valid",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_pm_constructor",
+      "rule_name": "项目经理建造师资格",
+      "entity_scope": "project_manager",
+      "required": true,
+      "validation_type": "entity_attribute_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "registered_constructor_certificate"
+      ],
+      "required_doc_names": [
+        "注册建造师证书"
+      ],
+      "extraction_targets": [
+        "specialty",
+        "level",
+        "registration_status",
+        "holder_name"
+      ],
+      "pass_condition": "specialty == 市政公用工程 AND level >= 二级 AND registration_status == valid",
+      "fail_condition": "specialty mismatch OR level below threshold OR invalid",
+      "output_fields": [
+        "holder_name",
+        "specialty",
+        "level",
+        "is_valid",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_pm_b_cert",
+      "rule_name": "项目经理安全生产考核B证",
+      "entity_scope": "project_manager",
+      "required": true,
+      "validation_type": "certificate_validity_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "safety_b_certificate"
+      ],
+      "required_doc_names": [
+        "安全生产考核合格证书（B类）"
+      ],
+      "extraction_targets": [
+        "certificate_type",
+        "holder_name",
+        "validity_status",
+        "expiry_date"
+      ],
+      "pass_condition": "certificate_type == B类 AND validity_status == valid",
+      "fail_condition": "missing OR invalid OR type mismatch",
+      "output_fields": [
+        "holder_name",
+        "certificate_type",
+        "expiry_date",
+        "is_valid",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_pm_social_security",
+      "rule_name": "项目经理在岗证明",
+      "entity_scope": "project_manager",
+      "required": true,
+      "validation_type": "document_combination_check",
+      "decision_mode": "rule_engine_plus_manual_fallback",
+      "required_doc_types": [
+        "social_security_record",
+        "retirement_proof",
+        "employment_contract",
+        "salary_statement"
+      ],
+      "required_doc_names": [
+        "项目经理社保证明材料",
+        "退休证明",
+        "聘用合同",
+        "工资流水"
+      ],
+      "pass_condition": "either valid social security proof exists OR valid retirement substitution package exists",
+      "fail_condition": "neither path satisfied",
+      "output_fields": [
+        "path_used",
+        "months_covered",
+        "doc_found",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_credit_commitment",
+      "rule_name": "投标人信誉承诺",
+      "entity_scope": "bidder",
+      "required": true,
+      "validation_type": "presence_check",
+      "decision_mode": "rule_engine_plus_manual_fallback",
+      "required_doc_types": [
+        "credit_commitment"
+      ],
+      "required_doc_names": [
+        "投标人信誉承诺"
+      ],
+      "pass_condition": "commitment text exists",
+      "fail_condition": "missing",
+      "output_fields": [
+        "doc_found",
+        "matched_text_span",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_joint_venture_agreement",
+      "rule_name": "联合体协议书",
+      "entity_scope": "joint_venture",
+      "required_when": "joint_venture_allowed_and_bidder_is_joint_venture",
+      "validation_type": "conditional_presence_check",
+      "decision_mode": "rule_engine",
+      "required_doc_types": [
+        "joint_venture_agreement"
+      ],
+      "required_doc_names": [
+        "联合体协议书"
+      ],
+      "extraction_targets": [
+        "member_count",
+        "lead_member",
+        "member_names"
+      ],
+      "pass_condition": "agreement exists AND member_count <= 2",
+      "fail_condition": "missing OR member_count > 2",
+      "output_fields": [
+        "member_count",
+        "lead_member",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_bid_bond",
+      "rule_name": "投标保证金",
+      "entity_scope": "bid_submission",
+      "required": true,
+      "validation_type": "financial_compliance_check",
+      "decision_mode": "rule_engine_plus_manual_fallback",
+      "required_doc_types": [
+        "bid_bond_receipt",
+        "paper_guarantee",
+        "electronic_guarantee"
+      ],
+      "required_doc_names": [
+        "投标保证金",
+        "投标保证金材料"
+      ],
+      "parameters": {
+        "required_amount_cny": 360000,
+        "allowed_forms": [
+          "cash_transfer",
+          "paper_guarantee",
+          "electronic_guarantee"
+        ]
+      },
+      "pass_condition": "one allowed form exists AND amount == 360000 AND timing/effectiveness valid",
+      "fail_condition": "missing OR amount mismatch OR invalid form OR invalid timing",
+      "output_fields": [
+        "bond_form",
+        "amount",
+        "effective_date",
+        "beneficiary",
+        "decision_reason"
+      ]
+    },
+    {
+      "rule_id": "qual_technical_lead_requirements",
+      "rule_name": "技术负责人资格满足招标文件要求",
+      "entity_scope": "technical_lead",
+      "required": true,
+      "validation_type": "spec_reference_check",
+      "decision_mode": "manual_or_extended_rule_config",
+      "required_doc_types": [
+        "technical_lead_resume",
+        "technical_lead_certificates"
+      ],
+      "pass_condition": "satisfy appendix_5_requirements",
+      "fail_condition": "not satisfied",
+      "output_fields": [
+        "doc_found",
+        "decision_reason"
+      ],
+      "manual_review_required": true,
+      "spec_incomplete": true
+    },
+    {
+      "rule_id": "qual_other_key_personnel",
+      "rule_name": "其他主要管理人员和技术人员满足招标文件要求",
+      "entity_scope": "other_key_personnel",
+      "required": true,
+      "validation_type": "spec_reference_check",
+      "decision_mode": "manual_or_extended_rule_config",
+      "required_doc_types": [
+        "project_org_chart",
+        "personnel_certificates"
+      ],
+      "pass_condition": "satisfy appendix_5_and_related_tables",
+      "fail_condition": "not satisfied",
+      "output_fields": [
+        "required_positions_present",
+        "decision_reason"
+      ],
+      "manual_review_required": true,
+      "spec_incomplete": true
+    }
+  ],
+  "format_and_integrity_rules": [
+    {
+      "rule_id": "fmt_technical_pages",
+      "rule_name": "施工组织设计页数上限",
+      "entity_scope": "technical_file",
+      "validation_type": "numeric_threshold_check",
+      "decision_mode": "rule_engine",
+      "parameters": {
+        "max_pages": 200,
+        "penalty_score": 1.0
+      },
+      "pass_condition": "page_count <= 200",
+      "fail_condition": "page_count > 200",
+      "output_fields": [
+        "page_count",
+        "penalty_applied"
+      ]
+    }
+  ],
+  "scoring_model": {
+    "score_buckets": [
+      {
+        "bucket_code": "business_and_technical",
+        "max_score": 20.0
+      },
+      {
+        "bucket_code": "price",
+        "max_score": 80.0
+      }
+    ],
+    "scoring_items": [
+      {
+        "item_id": "score_pm_qualification",
+        "bucket_code": "business_and_technical",
+        "category": "business",
+        "subcategory": "project_team",
+        "item_name": "项目经理任职资格",
+        "max_score": 2.0,
+        "decision_mode": "rule_engine",
+        "upstream_rules": [
+          "qual_pm_constructor",
+          "qual_pm_b_cert",
+          "qual_pm_social_security"
+        ],
+        "score_logic": {
+          "type": "binary_full_score",
+          "full_score_condition": "all upstream_rules pass",
+          "full_score": 2.0,
+          "otherwise": 0.0
+        },
+        "output_fields": [
+          "score",
+          "decision_reason",
+          "evidence_docs"
+        ]
+      },
+      {
+        "item_id": "score_technical_lead_qualification",
+        "bucket_code": "business_and_technical",
+        "category": "business",
+        "subcategory": "project_team",
+        "item_name": "技术负责人任职资格",
+        "max_score": 2.0,
+        "decision_mode": "manual_or_extended_rule_config",
+        "upstream_rules": [
+          "qual_technical_lead_requirements"
+        ],
+        "score_logic": {
+          "type": "binary_full_score",
+          "full_score_condition": "qual_technical_lead_requirements pass",
+          "full_score": 2.0,
+          "otherwise": 0.0
+        },
+        "manual_review_required": true,
+        "output_fields": [
+          "score",
+          "decision_reason",
+          "evidence_docs"
+        ]
+      },
+      {
+        "item_id": "score_other_key_personnel",
+        "bucket_code": "business_and_technical",
+        "category": "business",
+        "subcategory": "project_team",
+        "item_name": "其他主要管理人员和技术人员",
+        "max_score": 1.5,
+        "decision_mode": "manual_or_extended_rule_config",
+        "upstream_rules": [
+          "qual_other_key_personnel"
+        ],
+        "score_logic": {
+          "type": "binary_full_score",
+          "full_score_condition": "qual_other_key_personnel pass",
+          "full_score": 1.5,
+          "otherwise": 0.0
+        },
+        "manual_review_required": true,
+        "output_fields": [
+          "score",
+          "decision_reason",
+          "evidence_docs"
+        ]
+      },
+      {
+        "item_id": "score_pm_experience",
+        "bucket_code": "business_and_technical",
+        "category": "business",
+        "subcategory": "personnel_experience",
+        "item_name": "项目经理业绩",
+        "max_score": 3.0,
+        "decision_mode": "hybrid_rule_rag",
+        "required_doc_types": [
+          "performance_contract",
+          "completion_acceptance_doc",
+          "award_notice",
+          "other_performance_proof"
+        ],
+        "extraction_targets": [
+          "project_name",
+          "project_type",
+          "contract_amount",
+          "role",
+          "date_range"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "项目经理",
+            "市政公用工程",
+            "合同金额",
+            "竣工",
+            "业绩"
+          ],
+          "semantic_queries": [
+            "近五年内项目经理担任项目经理岗位的市政公用工程施工业绩",
+            "单项合同金额不低于1000万元的市政工程业绩证明"
+          ]
+        },
+        "score_logic": {
+          "type": "binary_full_score",
+          "full_score_condition": "exists one performance where role == 项目经理 AND project_type == 市政公用工程施工 AND contract_amount >= 10000000 AND within_last_5_years == true",
+          "full_score": 3.0,
+          "otherwise": 0.0
+        },
+        "llm_task": {
+          "enabled": true,
+          "purpose": "evidence_alignment_and_field_extraction",
+          "restricted_to_retrieved_chunks": true,
+          "required_output_fields": [
+            "matched_evidence_spans",
+            "project_type_judgement",
+            "amount_extracted",
+            "role_extracted",
+            "time_validity_judgement"
+          ]
+        },
+        "output_fields": [
+          "score",
+          "matched_project_name",
+          "contract_amount",
+          "role",
+          "decision_reason",
+          "evidence_docs"
+        ]
+      },
+      {
+        "item_id": "score_safety_civilization_award",
+        "bucket_code": "business_and_technical",
+        "category": "business",
+        "subcategory": "awards",
+        "item_name": "安全文明施工奖项",
+        "max_score": 1.5,
+        "decision_mode": "hybrid_rule_rag",
+        "required_doc_types": [
+          "award_certificate",
+          "award_notice",
+          "project_award_proof"
+        ],
+        "extraction_targets": [
+          "award_name",
+          "award_level",
+          "award_project_name",
+          "award_date",
+          "project_type"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "安全文明施工",
+            "示范工地",
+            "奖项",
+            "国家级",
+            "省级",
+            "地市级"
+          ],
+          "semantic_queries": [
+            "近五年内安全文明施工奖项证明材料",
+            "建筑施工安全质量标准化示范工地奖项"
+          ]
+        },
+        "score_logic": {
+          "type": "tiered_capped_score",
+          "tiers": [
+            {
+              "condition": "exists valid national_award",
+              "score": 1.5
+            },
+            {
+              "condition": "exists valid provincial_award",
+              "score": 1.2
+            },
+            {
+              "condition": "exists valid_city_award",
+              "score": 0.9
+            }
+          ],
+          "cap_score": 1.5,
+          "dedupe_rule": "same_project_only_highest_award_counts",
+          "extra_constraint": "awarded_project_type must be same_category_as_current_project"
+        },
+        "llm_task": {
+          "enabled": true,
+          "purpose": "award_level_normalization_and_same_category_judgement",
+          "restricted_to_retrieved_chunks": true,
+          "required_output_fields": [
+            "award_level_normalized",
+            "same_project_category_judgement",
+            "matched_evidence_spans"
+          ]
+        },
+        "output_fields": [
+          "score",
+          "best_award_name",
+          "award_level",
+          "decision_reason",
+          "evidence_docs"
+        ]
+      },
+      {
+        "item_id": "score_equipment_plan",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "投入的主要施工机械设备",
+        "max_score": 1.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "主要施工机械设备",
+            "机械设备",
+            "设备投入计划"
+          ],
+          "semantic_queries": [
+            "施工机械设备配置是否满足施工需要",
+            "主要设备型号数量与工程适配性"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [0.8, 1.0],
+              "condition_hint": "配置充分、适配性强、满足施工需要"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.4, 0.7],
+              "condition_hint": "基本满足施工需要"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.3],
+              "condition_hint": "明显缺陷或证据不足"
+            }
+          ]
+        },
+        "llm_task": {
+          "enabled": true,
+          "purpose": "rubric_scoring",
+          "restricted_to_retrieved_chunks": true,
+          "required_output_fields": [
+            "score",
+            "reasoning",
+            "matched_evidence_spans",
+            "confidence"
+          ]
+        }
+      },
+      {
+        "item_id": "score_labor_plan",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "劳动力安排计划",
+        "max_score": 1.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "劳动力安排计划",
+            "劳动力计划"
+          ],
+          "semantic_queries": [
+            "劳动力安排是否科学合理且满足施工需要"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [0.8, 1.0],
+              "condition_hint": "安排科学合理、满足施工需要"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.4, 0.7],
+              "condition_hint": "基本满足"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.3],
+              "condition_hint": "明显缺陷或证据不足"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_quality_measures",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "确保工程质量的技术组织措施",
+        "max_score": 2.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "质量保证措施",
+            "质量管理",
+            "工程质量"
+          ],
+          "semantic_queries": [
+            "确保工程质量的技术组织措施是否周全具体有效"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [1.6, 2.0],
+              "condition_hint": "周全、具体、有效、满足项目需要"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.8, 1.5],
+              "condition_hint": "基本满足项目需要"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.7],
+              "condition_hint": "有重大缺陷或证据不足"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_safety_measures",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "确保安全生产的技术组织措施",
+        "max_score": 2.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "安全生产措施",
+            "危险源",
+            "安全管理"
+          ],
+          "semantic_queries": [
+            "确保安全生产的技术组织措施是否完善且针对性强"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [1.6, 2.0],
+              "condition_hint": "完善、针对性强、满足项目需要"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.8, 1.5],
+              "condition_hint": "基本满足"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.7],
+              "condition_hint": "有重大缺陷或证据不足"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_schedule_measures",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "确保工期的技术组织措施",
+        "max_score": 2.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "工期保障",
+            "施工进度计划",
+            "节点工期"
+          ],
+          "semantic_queries": [
+            "确保工期的技术组织措施是否科学合理并符合项目实际"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [1.6, 2.0],
+              "condition_hint": "科学合理、符合项目实际"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.8, 1.5],
+              "condition_hint": "基本满足"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.7],
+              "condition_hint": "明显缺陷或证据不足"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_civilized_construction",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "确保文明施工的技术组织措施",
+        "max_score": 1.0,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "文明施工",
+            "环境保护",
+            "扬尘治理"
+          ],
+          "semantic_queries": [
+            "文明施工计划、环境保护措施、扬尘治理措施是否齐备"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [0.8, 1.0],
+              "condition_hint": "措施齐备且达到示范工地标准要求"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.4, 0.7],
+              "condition_hint": "基本满足"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.3],
+              "condition_hint": "缺失较多或证据不足"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_site_layout",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "施工总平面布置图",
+        "max_score": 0.5,
+        "decision_mode": "rag_llm_plus_manual_review",
+        "required_doc_types": [
+          "construction_plan",
+          "site_layout_diagram"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "施工总平面布置图",
+            "平面布置"
+          ],
+          "semantic_queries": [
+            "施工总平面布置图是否安排科学合理并符合施工实际"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [0.4, 0.5],
+              "condition_hint": "有图且安排科学合理"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.2, 0.3],
+              "condition_hint": "有图但一般"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.1],
+              "condition_hint": "缺图或明显不合理"
+            }
+          ]
+        },
+        "manual_review_required": true
+      },
+      {
+        "item_id": "score_key_difficulties",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "construction_plan",
+        "item_name": "工程施工的重点和难点及保证措施",
+        "max_score": 1.5,
+        "decision_mode": "rag_llm_scoring",
+        "required_doc_types": [
+          "construction_plan"
+        ],
+        "retrieval_hints": {
+          "keywords": [
+            "重点难点",
+            "保证措施",
+            "重难点"
+          ],
+          "semantic_queries": [
+            "工程施工的重点和难点是否逐项列明并提出科学合理的保证措施"
+          ]
+        },
+        "score_logic": {
+          "type": "rubric_score",
+          "rubric_levels": [
+            {
+              "label": "high",
+              "score_range": [1.2, 1.5],
+              "condition_hint": "逐项列明、措施科学合理、可行性强"
+            },
+            {
+              "label": "medium",
+              "score_range": [0.6, 1.1],
+              "condition_hint": "有一定针对性但不够完整"
+            },
+            {
+              "label": "low",
+              "score_range": [0.0, 0.5],
+              "condition_hint": "未逐项列明或有重大缺陷"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_technical_page_penalty",
+        "bucket_code": "business_and_technical",
+        "category": "technical",
+        "subcategory": "format_penalty",
+        "item_name": "施工组织设计页数超限扣分",
+        "max_score": -1.0,
+        "decision_mode": "rule_engine",
+        "upstream_rules": [
+          "fmt_technical_pages"
+        ],
+        "score_logic": {
+          "type": "penalty",
+          "penalty_condition": "page_count > 200",
+          "penalty_score": -1.0,
+          "otherwise": 0.0
+        }
+      }
+    ],
+    "price_scoring": {
+      "item_id": "score_price",
+      "bucket_code": "price",
+      "max_score": 80.0,
+      "decision_mode": "rule_engine",
+      "formula_description": "投标总报价与评标基准值一致得满分；每低于评标基准值1%扣0.5分；每高于评标基准值1%扣1分",
+      "required_inputs": [
+        "bid_price",
+        "benchmark_price"
+      ],
+      "computed_fields": [
+        "deviation_ratio",
+        "price_score"
+      ]
+    }
+  },
+  "rag_pipeline_config": {
+    "chunking_strategy": {
+      "recommended_unit": "section_or_subsection",
+      "max_chars_per_chunk": 1200,
+      "overlap_chars": 150
+    },
+    "retrieval_top_k": 5,
+    "rerank_top_k": 3,
+    "llm_constraints": {
+      "must_use_retrieved_evidence_only": true,
+      "must_return_json": true,
+      "must_quote_evidence_spans": true,
+      "must_output_insufficient_evidence_when_not_found": true
+    },
+    "llm_output_template": {
+      "score": 0,
+      "confidence": 0,
+      "reasoning": "",
+      "matched_evidence_spans": [],
+      "missing_evidence": [],
+      "decision": "pass|fail|partial|insufficient_evidence"
+    }
+  },
+  "api_friendly_views": {
+    "required_docs_catalog": [
+      "business_license",
+      "enterprise_qualification_certificate",
+      "safety_production_license",
+      "registered_constructor_certificate",
+      "safety_b_certificate",
+      "social_security_record",
+      "retirement_proof",
+      "employment_contract",
+      "salary_statement",
+      "credit_commitment",
+      "joint_venture_agreement",
+      "bid_bond_receipt",
+      "paper_guarantee",
+      "electronic_guarantee",
+      "technical_lead_resume",
+      "technical_lead_certificates",
+      "project_org_chart",
+      "personnel_certificates",
+      "performance_contract",
+      "completion_acceptance_doc",
+      "award_certificate",
+      "award_notice",
+      "construction_plan",
+      "site_layout_diagram"
+    ],
+    "rule_execution_order": [
+      "qualification_rules",
+      "format_and_integrity_rules",
+      "business_scoring_items",
+      "technical_scoring_items",
+      "price_scoring"
+    ]
+  },
+  "known_gaps": [
+    {
+      "gap_id": "gap_appendix_5_not_fully_extracted",
+      "description": "附录5、附表1、附表2中关于技术负责人及其他主要管理人员的完整细则尚未完全结构化",
+      "impact": "相关资格核验与评分项需人工复核或二次抽取补齐"
+    }
+  ]
+}

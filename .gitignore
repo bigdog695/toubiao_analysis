@@ -8,3 +8,4 @@ ocr/tests/.tmp/
 *.ocr.json
 *.seal.json
 ocr/test_ocr_result.json
+.vscode/
