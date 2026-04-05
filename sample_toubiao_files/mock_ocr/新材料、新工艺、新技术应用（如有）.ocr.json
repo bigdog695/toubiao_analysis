@@ -1,0 +1,54 @@
+{
+  "document_id": "新材料、新工艺、新技术应用（如有）",
+  "provider": "mock-pypdf",
+  "total_pages": 1,
+  "full_text": "十八、新材料、新工艺、新技术应用（如有） 格式自拟（如有）。\n\n如投标人未提供该项内容，视同投标人本项目无上述情况。\n\n无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+  "page_results": [
+    {
+      "document_id": "新材料、新工艺、新技术应用（如有）",
+      "page_number": 1,
+      "provider": "mock-pypdf",
+      "full_text": "十八、新材料、新工艺、新技术应用（如有） 格式自拟（如有）。\n\n如投标人未提供该项内容，视同投标人本项目无上述情况。\n\n无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "新材料、新工艺、新技术应用（如有）-p1-b1",
+          "text": "十八、新材料、新工艺、新技术应用（如有） 格式自拟（如有）。",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        },
+        {
+          "block_id": "新材料、新工艺、新技术应用（如有）-p1-b2",
+          "text": "如投标人未提供该项内容，视同投标人本项目无上述情况。",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        },
+        {
+          "block_id": "新材料、新工艺、新技术应用（如有）-p1-b3",
+          "text": "无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "新材料、新工艺、新技术应用（如有）.pdf"
+      }
+    }
+  ]
+}

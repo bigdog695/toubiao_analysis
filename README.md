@@ -1,8 +1,38 @@
 # 招标文件评分标准提取工具 - 使用说明
 
+## 新增：本地语义检索与打分 Demo
+
+仓库中新增了一套独立实现，位于 [local_semantic_engine/README.md](C:\Users\kaitao\codes\toubiao_analysis\local_semantic_engine\README.md)。
+
+这套链路用于本地 demo：
+
+- 批量读取投标 PDF
+- 读取 mock OCR 或真实 OCR 结果
+- 建立本地 semantic store
+- 按 `zhaobiao_file_model.json` 中的 semantic scoring items 做检索
+- 通过 mock 或真实 LLM client 输出 item 级评分结果
+
+相关目录说明：
+
+- 代码实现： [local_semantic_engine](C:\Users\kaitao\codes\toubiao_analysis\local_semantic_engine)
+- demo 输入文件： [sample_toubiao_files](C:\Users\kaitao\codes\toubiao_analysis\sample_toubiao_files)
+- mock OCR 输出： [sample_toubiao_files/mock_ocr](C:\Users\kaitao\codes\toubiao_analysis\sample_toubiao_files\mock_ocr)
+- 本地运行产物： `.semantic_store/`（已加入忽略）
+
+推荐入口：
+
+```bash
+python -m local_semantic_engine pipeline --help
+```
+
+如果你要看完整设计、运行方式和 `runtime_mode=mock|real` 的说明，直接看 [local_semantic_engine/README.md](C:\Users\kaitao\codes\toubiao_analysis\local_semantic_engine\README.md)。
+
 ## 简介
 
 这套工具用于从招标文件PDF中自动提取评分标准，并输出为结构化的JSON格式。
+
+新增的本地语义检索与 mock 打分工作流说明，见：
+[LOCAL_SEMANTIC_ENGINE_WORKFLOW.md](/C:/Users/kaitao/codes/toubiao_analysis/LOCAL_SEMANTIC_ENGINE_WORKFLOW.md)
 
 ## 文件说明
 

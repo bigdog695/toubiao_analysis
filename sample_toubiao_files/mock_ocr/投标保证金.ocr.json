@@ -1,0 +1,34 @@
+{
+  "document_id": "投标保证金",
+  "provider": "mock-pypdf",
+  "total_pages": 1,
+  "full_text": "投标保证金递交方式：纸质保函（纸质银行保函、纸质担保机构担保、纸质保证保险等）",
+  "page_results": [
+    {
+      "document_id": "投标保证金",
+      "page_number": 1,
+      "provider": "mock-pypdf",
+      "full_text": "投标保证金递交方式：纸质保函（纸质银行保函、纸质担保机构担保、纸质保证保险等）",
+      "blocks": [
+        {
+          "block_id": "投标保证金-p1-b1",
+          "text": "投标保证金递交方式：纸质保函（纸质银行保函、纸质担保机构担保、纸质保证保险等）",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金.pdf"
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "document_id": "投标保证金材料",
+  "provider": "mock-pypdf",
+  "total_pages": 7,
+  "full_text": "六、投标保证金材料 投标保证金材料 担保机构担保扫描件 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n保函查询网址及截图：\n\nhttps://bh.join-share.net/rest/zysddzbh/vt 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n保函费转账回单 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n基本存款账户信息 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统\n\n担保机构营业执照及经营许可证 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+  "page_results": [
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 1,
+      "provider": "mock-pypdf",
+      "full_text": "六、投标保证金材料 投标保证金材料 担保机构担保扫描件 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p1-b1",
+          "text": "六、投标保证金材料 投标保证金材料 担保机构担保扫描件 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 2,
+      "provider": "mock-pypdf",
+      "full_text": "保函查询网址及截图：\n\nhttps://bh.join-share.net/rest/zysddzbh/vt 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p2-b1",
+          "text": "保函查询网址及截图：",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        },
+        {
+          "block_id": "投标保证金材料-p2-b2",
+          "text": "https://bh.join-share.net/rest/zysddzbh/vt 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 3,
+      "provider": "mock-pypdf",
+      "full_text": "保函费转账回单 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p3-b1",
+          "text": "保函费转账回单 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 4,
+      "provider": "mock-pypdf",
+      "full_text": "基本存款账户信息 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p4-b1",
+          "text": "基本存款账户信息 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 5,
+      "provider": "mock-pypdf",
+      "full_text": "六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p5-b1",
+          "text": "六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 6,
+      "provider": "mock-pypdf",
+      "full_text": "六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p6-b1",
+          "text": "六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    },
+    {
+      "document_id": "投标保证金材料",
+      "page_number": 7,
+      "provider": "mock-pypdf",
+      "full_text": "担保机构营业执照及经营许可证 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "投标保证金材料-p7-b1",
+          "text": "担保机构营业执照及经营许可证 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "投标保证金材料.pdf"
+      }
+    }
+  ]
+}

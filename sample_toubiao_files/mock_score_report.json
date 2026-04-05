@@ -1,0 +1,785 @@
+{
+  "ingest_report": {
+    "project_id": "demo-project",
+    "store_dir": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\.semantic_store",
+    "documents": [
+      {
+        "source_file": "其他内容.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\其他内容.pdf",
+        "doc_type": "project_award_proof",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 2
+      },
+      {
+        "source_file": "其他资料.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\其他资料.pdf",
+        "doc_type": "award_certificate",
+        "doc_type_source": "manual",
+        "page_count": 7,
+        "chunk_count": 33
+      },
+      {
+        "source_file": "商务文件封面.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\商务文件封面.pdf",
+        "doc_type": "business_file_cover",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 1
+      },
+      {
+        "source_file": "商务文件详细评审资料.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\商务文件详细评审资料.pdf",
+        "doc_type": "other_performance_proof",
+        "doc_type_source": "manual",
+        "page_count": 27,
+        "chunk_count": 40
+      },
+      {
+        "source_file": "工程量清单报价书.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\工程量清单报价书.pdf",
+        "doc_type": "price_file",
+        "doc_type_source": "manual",
+        "page_count": 159,
+        "chunk_count": 390
+      },
+      {
+        "source_file": "技术文件封面.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\技术文件封面.pdf",
+        "doc_type": "technical_file_cover",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 1
+      },
+      {
+        "source_file": "投标保证金.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\投标保证金.pdf",
+        "doc_type": "bid_bond_receipt",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 1
+      },
+      {
+        "source_file": "投标保证金材料.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\投标保证金材料.pdf",
+        "doc_type": "bid_bond_receipt",
+        "doc_type_source": "manual",
+        "page_count": 7,
+        "chunk_count": 8
+      },
+      {
+        "source_file": "投标函（不含报价）.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\投标函（不含报价）.pdf",
+        "doc_type": "bid_letter_non_price",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 17
+      },
+      {
+        "source_file": "投标函（报价）.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\投标函（报价）.pdf",
+        "doc_type": "price_file",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 6
+      },
+      {
+        "source_file": "投标报价需要说明的其他资料.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\投标报价需要说明的其他资料.pdf",
+        "doc_type": "price_file_supporting_docs",
+        "doc_type_source": "manual",
+        "page_count": 5,
+        "chunk_count": 20
+      },
+      {
+        "source_file": "报价文件封面.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\报价文件封面.pdf",
+        "doc_type": "price_file_cover",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 1
+      },
+      {
+        "source_file": "拟分包项目情况表.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\拟分包项目情况表.pdf",
+        "doc_type": "subcontracting_plan",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 1
+      },
+      {
+        "source_file": "新材料、新工艺、新技术应用（如有）.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\新材料、新工艺、新技术应用（如有）.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 3
+      },
+      {
+        "source_file": "法人身份证明或授权委托书.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\法人身份证明或授权委托书.pdf",
+        "doc_type": "legal_auth",
+        "doc_type_source": "manual",
+        "page_count": 5,
+        "chunk_count": 35
+      },
+      {
+        "source_file": "第一章主要施工方法.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第一章主要施工方法.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 61,
+        "chunk_count": 700
+      },
+      {
+        "source_file": "第七章确保工期的技术组织措施.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第七章确保工期的技术组织措施.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 11,
+        "chunk_count": 115
+      },
+      {
+        "source_file": "第三章拟投入的主要施工机械设备计划.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第三章拟投入的主要施工机械设备计划.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 4,
+        "chunk_count": 42
+      },
+      {
+        "source_file": "第九章施工总平面布置图.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第九章施工总平面布置图.pdf",
+        "doc_type": "site_layout_diagram",
+        "doc_type_source": "manual",
+        "page_count": 7,
+        "chunk_count": 64
+      },
+      {
+        "source_file": "第二章拟投入的主要物资计划.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第二章拟投入的主要物资计划.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 4,
+        "chunk_count": 31
+      },
+      {
+        "source_file": "第五章确保工程质量的技术组织措施.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第五章确保工程质量的技术组织措施.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 18,
+        "chunk_count": 203
+      },
+      {
+        "source_file": "第八章确保文明施工的技术组织措施.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第八章确保文明施工的技术组织措施.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 28,
+        "chunk_count": 363
+      },
+      {
+        "source_file": "第六章确保安全生产的技术组织措施.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第六章确保安全生产的技术组织措施.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 25,
+        "chunk_count": 338
+      },
+      {
+        "source_file": "第十章工程施工的重点和难点及保证措施.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第十章工程施工的重点和难点及保证措施.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 37,
+        "chunk_count": 282
+      },
+      {
+        "source_file": "第四章劳动力安排.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\第四章劳动力安排.pdf",
+        "doc_type": "construction_plan",
+        "doc_type_source": "manual",
+        "page_count": 4,
+        "chunk_count": 44
+      },
+      {
+        "source_file": "联合体协议书.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\联合体协议书.pdf",
+        "doc_type": "joint_venture_agreement",
+        "doc_type_source": "manual",
+        "page_count": 1,
+        "chunk_count": 22
+      },
+      {
+        "source_file": "资格审查资料.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\资格审查资料.pdf",
+        "doc_type": "personnel_certificates",
+        "doc_type_source": "manual",
+        "page_count": 61,
+        "chunk_count": 89
+      },
+      {
+        "source_file": "项目管理机构.pdf",
+        "source_path": "C:\\Users\\kaitao\\codes\\toubiao_analysis\\sample_toubiao_files\\项目管理机构.pdf",
+        "doc_type": "project_org_chart",
+        "doc_type_source": "manual",
+        "page_count": 28,
+        "chunk_count": 30
+      }
+    ],
+    "errors": []
+  },
+  "score_report": {
+    "semantic_scoring_results": [
+      {
+        "item_id": "score_pm_experience",
+        "item_name": "项目经理业绩",
+        "decision_mode": "hybrid_rule_rag",
+        "score": 0.0,
+        "max_score": 3.0,
+        "decision": "fail",
+        "reasoning": "Mock binary scoring for 项目经理业绩 used average retrieval 0.38.",
+        "confidence": 0.38462,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__商务文件详细评审资料__02ff26dfc18e-c00006",
+            "source_file": "商务文件详细评审资料.pdf",
+            "page_start": 2,
+            "page_end": 2,
+            "quote": "项目经理近年完成的类似项目情况表（详细评审） 业绩编号 1 项目名称 板桥河初雨调蓄池工程总包 项目所在地 长丰县双凤开发区 发包人名称 安徽长丰双凤经济开发区管理委员会 发包人地址 阜阳北路118号 合同价格 13144.129225万元 开工日期 2021年8月8日 竣工日期 2022年8月1日 承担的工作 工程内"
+          },
+          {
+            "chunk_id": "demo_project__商务文件详细评审资料__02ff26dfc18e-c00001",
+            "source_file": "商务文件详细评审资料.pdf",
+            "page_start": 1,
+            "page_end": 1,
+            "quote": "项目经理业绩基本情况表（详细评审） 业绩序号 项目名称（合同名称） 备注 1 板桥河初雨调蓄池工程总包 合同金额：13144.129225万元 验收时 间：2022年8月1日 项目经理：杨成海 注："
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.0,
+          "decision": "fail",
+          "reasoning": "Mock binary scoring for 项目经理业绩 used average retrieval 0.38.",
+          "confidence": 0.38462,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__商务文件详细评审资料__02ff26dfc18e-c00006",
+              "source_file": "商务文件详细评审资料.pdf",
+              "page_start": 2,
+              "page_end": 2,
+              "quote": "项目经理近年完成的类似项目情况表（详细评审） 业绩编号 1 项目名称 板桥河初雨调蓄池工程总包 项目所在地 长丰县双凤开发区 发包人名称 安徽长丰双凤经济开发区管理委员会 发包人地址 阜阳北路118号 合同价格 13144.129225万元 开工日期 2021年8月8日 竣工日期 2022年8月1日 承担的工作 工程内"
+            },
+            {
+              "chunk_id": "demo_project__商务文件详细评审资料__02ff26dfc18e-c00001",
+              "source_file": "商务文件详细评审资料.pdf",
+              "page_start": 1,
+              "page_end": 1,
+              "quote": "项目经理业绩基本情况表（详细评审） 业绩序号 项目名称（合同名称） 备注 1 板桥河初雨调蓄池工程总包 合同金额：13144.129225万元 验收时 间：2022年8月1日 项目经理：杨成海 注："
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_safety_civilization_award",
+        "item_name": "安全文明施工奖项",
+        "decision_mode": "hybrid_rule_rag",
+        "score": 0.0,
+        "max_score": 1.5,
+        "decision": "partial",
+        "reasoning": "Mock tiered scoring for 安全文明施工奖项. No award level markers matched.",
+        "confidence": 0.3,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__其他资料__d977bd4881c8-c00029",
+            "source_file": "其他资料.pdf",
+            "page_start": 6,
+            "page_end": 6,
+            "quote": "特此证明。"
+          },
+          {
+            "chunk_id": "demo_project__其他资料__d977bd4881c8-c00007",
+            "source_file": "其他资料.pdf",
+            "page_start": 1,
+            "page_end": 1,
+            "quote": "4.招标文件要求提交投标保证金的，我方将与本投标函一起提交相应金额的投标 保证金，且承诺投标保证金真实有效，如采用银行转账、银行电汇形式，投标保证金 是从我单位基本账户转出。如采用电子保函、纸质保函形式，其办理所需的费用，是 从我单位基本账户汇(支)出，并保证真实有效。我单位基本账户户号为：【中国农业 银行股份有限公司"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.0,
+          "decision": "partial",
+          "reasoning": "Mock tiered scoring for 安全文明施工奖项. No award level markers matched.",
+          "confidence": 0.3,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__其他资料__d977bd4881c8-c00029",
+              "source_file": "其他资料.pdf",
+              "page_start": 6,
+              "page_end": 6,
+              "quote": "特此证明。"
+            },
+            {
+              "chunk_id": "demo_project__其他资料__d977bd4881c8-c00007",
+              "source_file": "其他资料.pdf",
+              "page_start": 1,
+              "page_end": 1,
+              "quote": "4.招标文件要求提交投标保证金的，我方将与本投标函一起提交相应金额的投标 保证金，且承诺投标保证金真实有效，如采用银行转账、银行电汇形式，投标保证金 是从我单位基本账户转出。如采用电子保函、纸质保函形式，其办理所需的费用，是 从我单位基本账户汇(支)出，并保证真实有效。我单位基本账户户号为：【中国农业 银行股份有限公司"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_equipment_plan",
+        "item_name": "投入的主要施工机械设备",
+        "decision_mode": "rag_llm_scoring",
+        "score": 0.55,
+        "max_score": 1.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 投入的主要施工机械设备 chose level medium from average retrieval 0.53.",
+        "confidence": 0.52718,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00058",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 3,
+            "page_end": 3,
+            "quote": "第三章、拟投入的主要施工机械、设备计划 ..................................................... 66 第一节、机械设备数量、选型配置、进场数量计划 ................... 66 第二节、机械设备进场时间安排 ......................"
+          },
+          {
+            "chunk_id": "demo_project__第十章工程施工的重点和难点及保证措施__096bd285e3a7-c00248",
+            "source_file": "第十章工程施工的重点和难点及保证措施.pdf",
+            "page_start": 25,
+            "page_end": 25,
+            "quote": "设备 保证 本公司将为项目经理部配备性能卓越、状况良好的施工机械。项目经理部对施工机械 做到统筹安排、统一调配、合理使用。尽可能组织机械化流水作业，做到施工机械的 使用高效化，并做好施工机械的维修保养工作，施工现场设置修理场，保证施工机械 的正常运转。"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.55,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 投入的主要施工机械设备 chose level medium from average retrieval 0.53.",
+          "confidence": 0.52718,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00058",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 3,
+              "page_end": 3,
+              "quote": "第三章、拟投入的主要施工机械、设备计划 ..................................................... 66 第一节、机械设备数量、选型配置、进场数量计划 ................... 66 第二节、机械设备进场时间安排 ......................"
+            },
+            {
+              "chunk_id": "demo_project__第十章工程施工的重点和难点及保证措施__096bd285e3a7-c00248",
+              "source_file": "第十章工程施工的重点和难点及保证措施.pdf",
+              "page_start": 25,
+              "page_end": 25,
+              "quote": "设备 保证 本公司将为项目经理部配备性能卓越、状况良好的施工机械。项目经理部对施工机械 做到统筹安排、统一调配、合理使用。尽可能组织机械化流水作业，做到施工机械的 使用高效化，并做好施工机械的维修保养工作，施工现场设置修理场，保证施工机械 的正常运转。"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_labor_plan",
+        "item_name": "劳动力安排计划",
+        "decision_mode": "rag_llm_scoring",
+        "score": 0.15,
+        "max_score": 1.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 劳动力安排计划 chose level low from average retrieval 0.41.",
+        "confidence": 0.41022,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第四章劳动力安排__47e41b61774a-c00011",
+            "source_file": "第四章劳动力安排.pdf",
+            "page_start": 1,
+            "page_end": 1,
+            "quote": "三、各阶段劳动力安排计划"
+          },
+          {
+            "chunk_id": "demo_project__第六章确保安全生产的技术组织措施__905cd50ab8ff-c00165",
+            "source_file": "第六章确保安全生产的技术组织措施.pdf",
+            "page_start": 13,
+            "page_end": 13,
+            "quote": "理。"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.15,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 劳动力安排计划 chose level low from average retrieval 0.41.",
+          "confidence": 0.41022,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第四章劳动力安排__47e41b61774a-c00011",
+              "source_file": "第四章劳动力安排.pdf",
+              "page_start": 1,
+              "page_end": 1,
+              "quote": "三、各阶段劳动力安排计划"
+            },
+            {
+              "chunk_id": "demo_project__第六章确保安全生产的技术组织措施__905cd50ab8ff-c00165",
+              "source_file": "第六章确保安全生产的技术组织措施.pdf",
+              "page_start": 13,
+              "page_end": 13,
+              "quote": "理。"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_quality_measures",
+        "item_name": "确保工程质量的技术组织措施",
+        "decision_mode": "rag_llm_scoring",
+        "score": 1.15,
+        "max_score": 2.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 确保工程质量的技术组织措施 chose level medium from average retrieval 0.48.",
+        "confidence": 0.48346,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00061",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 3,
+            "page_end": 3,
+            "quote": "第五章、确保工程质量的技术组织措施 .............................................................74"
+          },
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 4,
+            "page_end": 4,
+            "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 1.15,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 确保工程质量的技术组织措施 chose level medium from average retrieval 0.48.",
+          "confidence": 0.48346,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00061",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 3,
+              "page_end": 3,
+              "quote": "第五章、确保工程质量的技术组织措施 .............................................................74"
+            },
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 4,
+              "page_end": 4,
+              "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_safety_measures",
+        "item_name": "确保安全生产的技术组织措施",
+        "decision_mode": "rag_llm_scoring",
+        "score": 1.15,
+        "max_score": 2.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 确保安全生产的技术组织措施 chose level medium from average retrieval 0.48.",
+        "confidence": 0.47844,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00076",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 4,
+            "page_end": 4,
+            "quote": "第六章、确保安全生产的技术组织措施 .............................................................92"
+          },
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 4,
+            "page_end": 4,
+            "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 1.15,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 确保安全生产的技术组织措施 chose level medium from average retrieval 0.48.",
+          "confidence": 0.47844,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00076",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 4,
+              "page_end": 4,
+              "quote": "第六章、确保安全生产的技术组织措施 .............................................................92"
+            },
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 4,
+              "page_end": 4,
+              "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_schedule_measures",
+        "item_name": "确保工期的技术组织措施",
+        "decision_mode": "rag_llm_scoring",
+        "score": 1.15,
+        "max_score": 2.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 确保工期的技术组织措施 chose level medium from average retrieval 0.46.",
+        "confidence": 0.46208,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 4,
+            "page_end": 4,
+            "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+          },
+          {
+            "chunk_id": "demo_project__第七章确保工期的技术组织措施__ce94f7471ff1-c00001",
+            "source_file": "第七章确保工期的技术组织措施.pdf",
+            "page_start": 1,
+            "page_end": 1,
+            "quote": "第七章、确保工期的技术组织措施 第一节、工期目标 计划工期：240 日历天；"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 1.15,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 确保工期的技术组织措施 chose level medium from average retrieval 0.46.",
+          "confidence": 0.46208,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00098",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 4,
+              "page_end": 4,
+              "quote": "第七章、确保工期的技术组织措施 ...................................................................117"
+            },
+            {
+              "chunk_id": "demo_project__第七章确保工期的技术组织措施__ce94f7471ff1-c00001",
+              "source_file": "第七章确保工期的技术组织措施.pdf",
+              "page_start": 1,
+              "page_end": 1,
+              "quote": "第七章、确保工期的技术组织措施 第一节、工期目标 计划工期：240 日历天；"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_civilized_construction",
+        "item_name": "确保文明施工的技术组织措施",
+        "decision_mode": "rag_llm_scoring",
+        "score": 0.15,
+        "max_score": 1.0,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 确保文明施工的技术组织措施 chose level low from average retrieval 0.44.",
+        "confidence": 0.43613999999999997,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00113",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 5,
+            "page_end": 5,
+            "quote": "第一节、文明施工目标与意义 .................................... 128 第二节、文明施工计划 .......................................... 128 第三节、文明施工组织机构与职责 ..............................."
+          },
+          {
+            "chunk_id": "demo_project__第八章确保文明施工的技术组织措施__74c082b7086c-c00170",
+            "source_file": "第八章确保文明施工的技术组织措施.pdf",
+            "page_start": 12,
+            "page_end": 12,
+            "quote": "四、污染管理措施"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.15,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 确保文明施工的技术组织措施 chose level low from average retrieval 0.44.",
+          "confidence": 0.43613999999999997,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00113",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 5,
+              "page_end": 5,
+              "quote": "第一节、文明施工目标与意义 .................................... 128 第二节、文明施工计划 .......................................... 128 第三节、文明施工组织机构与职责 ..............................."
+            },
+            {
+              "chunk_id": "demo_project__第八章确保文明施工的技术组织措施__74c082b7086c-c00170",
+              "source_file": "第八章确保文明施工的技术组织措施.pdf",
+              "page_start": 12,
+              "page_end": 12,
+              "quote": "四、污染管理措施"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_site_layout",
+        "item_name": "施工总平面布置图",
+        "decision_mode": "rag_llm_plus_manual_review",
+        "score": 0.25,
+        "max_score": 0.5,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 施工总平面布置图 chose level medium from average retrieval 0.58.",
+        "confidence": 0.57722,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第九章施工总平面布置图__e6da5156dd08-c00001",
+            "source_file": "第九章施工总平面布置图.pdf",
+            "page_start": 1,
+            "page_end": 1,
+            "quote": "第九章、施工总平面布置图"
+          },
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00134",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 5,
+            "page_end": 5,
+            "quote": "第九章、施工总平面布置图 .............................................................................. 156"
+          }
+        ],
+        "manual_review_required": false,
+        "raw_model_output": {
+          "score": 0.25,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 施工总平面布置图 chose level medium from average retrieval 0.58.",
+          "confidence": 0.57722,
+          "manual_review_required": false,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第九章施工总平面布置图__e6da5156dd08-c00001",
+              "source_file": "第九章施工总平面布置图.pdf",
+              "page_start": 1,
+              "page_end": 1,
+              "quote": "第九章、施工总平面布置图"
+            },
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00134",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 5,
+              "page_end": 5,
+              "quote": "第九章、施工总平面布置图 .............................................................................. 156"
+            }
+          ]
+        }
+      },
+      {
+        "item_id": "score_key_difficulties",
+        "item_name": "工程施工的重点和难点及保证措施",
+        "decision_mode": "rag_llm_scoring",
+        "score": 0.85,
+        "max_score": 1.5,
+        "decision": "partial",
+        "reasoning": "Mock rubric scoring for 工程施工的重点和难点及保证措施 chose level medium from average retrieval 0.49.",
+        "confidence": 0.48651999999999995,
+        "matched_evidence_spans": [
+          {
+            "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00138",
+            "source_file": "第一章主要施工方法.pdf",
+            "page_start": 6,
+            "page_end": 6,
+            "quote": "第十章、工程施工的重点和难点及保证措施 ................................................... 163 第一节、施工重点难点分析 ...................................... 163 第二节、施工导改重难点及保障措施 ..........."
+          },
+          {
+            "chunk_id": "demo_project__第十章工程施工的重点和难点及保证措施__096bd285e3a7-c00237",
+            "source_file": "第十章工程施工的重点和难点及保证措施.pdf",
+            "page_start": 23,
+            "page_end": 23,
+            "quote": "第十三节、防扰民、防扬尘施工重难点及保证措施 重难点分析：本工程道路经过村镇，在施工中必须做好相应措施，防止扰民。如何减小对周 边居民生活、工作影响，是本工程施工重点。"
+          }
+        ],
+        "manual_review_required": true,
+        "raw_model_output": {
+          "score": 0.85,
+          "decision": "partial",
+          "reasoning": "Mock rubric scoring for 工程施工的重点和难点及保证措施 chose level medium from average retrieval 0.49.",
+          "confidence": 0.48651999999999995,
+          "manual_review_required": true,
+          "matched_evidence_spans": [
+            {
+              "chunk_id": "demo_project__第一章主要施工方法__b38a4ab465e1-c00138",
+              "source_file": "第一章主要施工方法.pdf",
+              "page_start": 6,
+              "page_end": 6,
+              "quote": "第十章、工程施工的重点和难点及保证措施 ................................................... 163 第一节、施工重点难点分析 ...................................... 163 第二节、施工导改重难点及保障措施 ..........."
+            },
+            {
+              "chunk_id": "demo_project__第十章工程施工的重点和难点及保证措施__096bd285e3a7-c00237",
+              "source_file": "第十章工程施工的重点和难点及保证措施.pdf",
+              "page_start": 23,
+              "page_end": 23,
+              "quote": "第十三节、防扰民、防扬尘施工重难点及保证措施 重难点分析：本工程道路经过村镇，在施工中必须做好相应措施，防止扰民。如何减小对周 边居民生活、工作影响，是本工程施工重点。"
+            }
+          ]
+        }
+      }
+    ],
+    "rule_based_results": [
+      {
+        "item_id": "score_pm_qualification",
+        "item_name": "项目经理任职资格",
+        "score": 0.0,
+        "result": "",
+        "reason": "",
+        "evidence": [],
+        "implemented": false
+      },
+      {
+        "item_id": "score_technical_lead_qualification",
+        "item_name": "技术负责人任职资格",
+        "score": 0.0,
+        "result": "",
+        "reason": "",
+        "evidence": [],
+        "implemented": false
+      },
+      {
+        "item_id": "score_other_key_personnel",
+        "item_name": "其他主要管理人员和技术人员",
+        "score": 0.0,
+        "result": "",
+        "reason": "",
+        "evidence": [],
+        "implemented": false
+      },
+      {
+        "item_id": "score_technical_page_penalty",
+        "item_name": "施工组织设计页数超限扣分",
+        "score": 0.0,
+        "result": "",
+        "reason": "",
+        "evidence": [],
+        "implemented": false
+      }
+    ],
+    "price_result": {
+      "item_id": "score_price",
+      "item_name": null,
+      "score": 0.0,
+      "result": "",
+      "reason": "",
+      "evidence": [],
+      "implemented": false
+    },
+    "errors": []
+  }
+}

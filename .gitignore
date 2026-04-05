@@ -8,8 +8,15 @@ ocr/tests/.tmp/
 *.ocr.json
 *.seal.json
 ocr/test_ocr_result.json
+.semantic_store/
 .vscode/
 tmp*
 output*.png
 output*.jpg
 output*.jpeg
+
+!sample_toubiao_files/
+!sample_toubiao_files/doc_types.json
+!sample_toubiao_files/mock_score_report.json
+!sample_toubiao_files/mock_ocr/
+!sample_toubiao_files/mock_ocr/*.ocr.json

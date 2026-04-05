@@ -1,0 +1,44 @@
+{
+  "document_id": "其他内容",
+  "provider": "mock-pypdf",
+  "total_pages": 1,
+  "full_text": "十九、其他内容 投标人根据自身情况可以自行增加相关内容，如无，本节可以不附。\n\n无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+  "page_results": [
+    {
+      "document_id": "其他内容",
+      "page_number": 1,
+      "provider": "mock-pypdf",
+      "full_text": "十九、其他内容 投标人根据自身情况可以自行增加相关内容，如无，本节可以不附。\n\n无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+      "blocks": [
+        {
+          "block_id": "其他内容-p1-b1",
+          "text": "十九、其他内容 投标人根据自身情况可以自行增加相关内容，如无，本节可以不附。",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        },
+        {
+          "block_id": "其他内容-p1-b2",
+          "text": "无 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统 六安网上招投标系统        六安网上招投标系统        六安网上招投标系统",
+          "confidence": 1.0,
+          "bbox": null,
+          "points": [],
+          "angle": null,
+          "sub_image_id": null,
+          "block_type": "paragraph"
+        }
+      ],
+      "request_id": null,
+      "image_type": "mock",
+      "width": null,
+      "height": null,
+      "raw_response": {
+        "source": "pypdf",
+        "source_file": "其他内容.pdf"
+      }
+    }
+  ]
+}
