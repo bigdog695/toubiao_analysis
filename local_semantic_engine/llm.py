@@ -216,16 +216,16 @@ def _build_binary_reasoning(
     evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
     if passed:
         return (
-            f"已检索到与“{item_name}”直接相关的证明材料，"
+            f"投标文件已提供与“{item_name}”直接相关的证明材料，"
             f"{evidence_summary}，可作为该评分项的支撑依据。"
         )
     if avg_retrieval >= 0.25:
         return (
-            f"已检索到部分与“{item_name}”相关内容，"
+            f"投标文件已提供部分与“{item_name}”相关内容，"
             f"{evidence_summary}，但关键信息完整性或对应性仍不足，建议人工复核。"
         )
     return (
-        f"当前检索到的内容与“{item_name}”关联度较弱，"
+        f"现有材料中与“{item_name}”相关的内容关联度较弱，"
         f"{evidence_summary}，暂不足以形成有效支撑。"
     )
 
@@ -240,15 +240,15 @@ def _build_tiered_reasoning(
 ) -> str:
     evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
     if "国家级" in evidence_text or "national" in evidence_text.lower():
-        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含国家级奖项表述，可据此支持较高档评分。"
+        return f"投标文件已提供与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含国家级奖项表述，可据此支持较高档评分。"
     if "省级" in evidence_text or "provincial" in evidence_text.lower():
-        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含省级奖项表述，可据此支持对应档位评分。"
+        return f"投标文件已提供与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含省级奖项表述，可据此支持对应档位评分。"
     if "市级" in evidence_text or "地市级" in evidence_text or "city" in evidence_text.lower():
-        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含市级奖项表述，可据此支持基础档位评分。"
+        return f"投标文件已提供与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含市级奖项表述，可据此支持基础档位评分。"
     if score > 0:
-        return f"已检索到与“{item_name}”相关的材料，{evidence_summary}，可支持该评分项的对应档位判断。"
+        return f"投标文件已提供与“{item_name}”相关的材料，{evidence_summary}，可支持该评分项的对应档位判断。"
     return (
-        f"已检索到部分与“{item_name}”相关内容，{evidence_summary}，"
+        f"投标文件已提供部分与“{item_name}”相关内容，{evidence_summary}，"
         "但未发现足以明确奖项等级的关键信息，建议人工复核。"
     )
 
@@ -264,12 +264,12 @@ def _build_rubric_reasoning(
     evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
     label_text = _normalize_level_label(level_label)
     if decision == "pass":
-        return f"已检索到与“{item_name}”高度相关的内容，{evidence_summary}，材料完整性较好，可支撑{label_text}评价。"
+        return f"投标文件中已提供与“{item_name}”高度相关的内容，{evidence_summary}，材料完整性较好，可支撑{label_text}评价。"
     if avg_retrieval >= 0.45:
-        return f"已检索到与“{item_name}”相关的主要内容，{evidence_summary}，能够形成一定支撑，但仍建议结合原文进行复核，暂按{label_text}评价。"
+        return f"投标文件中已提供与“{item_name}”相关的主要内容，{evidence_summary}，能够形成一定支撑，但仍建议结合原文进行复核，暂按{label_text}评价。"
     if avg_retrieval > 0.2:
-        return f"已检索到少量与“{item_name}”相关内容，{evidence_summary}，支撑力度有限，暂按{label_text}评价。"
-    return f"当前关于“{item_name}”的有效证据较少，{evidence_summary}，暂不足以形成稳定判断。"
+        return f"投标文件中已提供少量与“{item_name}”相关内容，{evidence_summary}，支撑力度有限，暂按{label_text}评价。"
+    return f"关于“{item_name}”的有效材料较少，{evidence_summary}，暂不足以形成稳定判断。"
 
 
 def _summarize_evidence(evidence_chunks: list[dict[str, Any]], *, max_count: int) -> str:
@@ -282,13 +282,13 @@ def _summarize_evidence(evidence_chunks: list[dict[str, Any]], *, max_count: int
         if text:
             snippet = f"如“{text[:32]}{'...' if len(text) > 32 else ''}”"
         else:
-            snippet = "已有相关摘录"
+            snippet = "已有相关表述"
         if source_file:
-            snippet = f"{source_file}中的{snippet}"
+            snippet = f"{source_file}载明{snippet}"
         snippets.append(snippet)
 
     if not snippets:
-        return "当前尚未提取到可直接引用的证据摘录"
+        return "当前尚未形成可直接引用的关键表述"
     return "；".join(snippets)
 
 
