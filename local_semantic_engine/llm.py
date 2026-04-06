@@ -45,7 +45,7 @@ class MockHeuristicLLMClient:
             return {
                 "score": 0.0,
                 "decision": "insufficient_evidence",
-                "reasoning": f"Mock scoring found no evidence for {item_name}.",
+                "reasoning": f"未检索到可直接支撑“{item_name}”的有效证据，当前材料不足以形成明确判断。",
                 "confidence": 0.0,
                 "manual_review_required": True,
                 "matched_evidence_spans": [],
@@ -72,6 +72,7 @@ class MockHeuristicLLMClient:
                 evidence_text=evidence_text,
                 avg_retrieval=avg_retrieval,
                 matched_evidence_spans=matched_evidence_spans,
+                evidence_chunks=evidence_chunks,
             )
 
         return self._score_rubric(
@@ -80,6 +81,7 @@ class MockHeuristicLLMClient:
             score_logic=score_logic if isinstance(score_logic, dict) else {},
             avg_retrieval=avg_retrieval,
             matched_evidence_spans=matched_evidence_spans,
+            evidence_chunks=evidence_chunks,
         )
 
     def _score_hybrid_rule_rag(
@@ -91,6 +93,7 @@ class MockHeuristicLLMClient:
         evidence_text: str,
         avg_retrieval: float,
         matched_evidence_spans: list[dict[str, Any]],
+        evidence_chunks: list[dict[str, Any]],
     ) -> dict[str, Any]:
         logic_type = score_logic.get("type")
         if logic_type == "binary_full_score":
@@ -99,7 +102,12 @@ class MockHeuristicLLMClient:
             return {
                 "score": min(score, max_score),
                 "decision": "pass" if passed else "fail",
-                "reasoning": f"Mock binary scoring for {item_name} used average retrieval {avg_retrieval:.2f}.",
+                "reasoning": _build_binary_reasoning(
+                    item_name=item_name,
+                    passed=passed,
+                    avg_retrieval=avg_retrieval,
+                    evidence_chunks=evidence_chunks,
+                ),
                 "confidence": min(max(avg_retrieval, 0.2), 0.95),
                 "manual_review_required": avg_retrieval < 0.6,
                 "matched_evidence_spans": matched_evidence_spans,
@@ -124,7 +132,13 @@ class MockHeuristicLLMClient:
             return {
                 "score": min(score, max_score),
                 "decision": decision,
-                "reasoning": f"Mock tiered scoring for {item_name}. {reason}",
+                "reasoning": _build_tiered_reasoning(
+                    item_name=item_name,
+                    score=score,
+                    evidence_text=evidence_text,
+                    evidence_chunks=evidence_chunks,
+                    fallback_reason=reason,
+                ),
                 "confidence": min(max(avg_retrieval, 0.3), 0.9),
                 "manual_review_required": score == 0.0,
                 "matched_evidence_spans": matched_evidence_spans,
@@ -133,7 +147,7 @@ class MockHeuristicLLMClient:
         return {
             "score": 0.0,
             "decision": "insufficient_evidence",
-            "reasoning": f"Mock client does not understand score_logic.type={logic_type!r}.",
+            "reasoning": f"已检索到部分与“{item_name}”相关材料，但当前评分逻辑尚未覆盖该判定方式，建议人工复核。",
             "confidence": 0.2,
             "manual_review_required": True,
             "matched_evidence_spans": matched_evidence_spans,
@@ -147,13 +161,14 @@ class MockHeuristicLLMClient:
         score_logic: dict[str, Any],
         avg_retrieval: float,
         matched_evidence_spans: list[dict[str, Any]],
+        evidence_chunks: list[dict[str, Any]],
     ) -> dict[str, Any]:
         rubric_levels = score_logic.get("rubric_levels", [])
         if not rubric_levels:
             return {
                 "score": 0.0,
                 "decision": "insufficient_evidence",
-                "reasoning": f"Mock rubric scoring for {item_name} found no rubric_levels.",
+                "reasoning": f"已检索到与“{item_name}”相关内容，但缺少可用的评分档位配置，建议人工复核。",
                 "confidence": 0.2,
                 "manual_review_required": True,
                 "matched_evidence_spans": matched_evidence_spans,
@@ -178,14 +193,121 @@ class MockHeuristicLLMClient:
         return {
             "score": min(score, max_score),
             "decision": decision,
-            "reasoning": (
-                f"Mock rubric scoring for {item_name} chose level {chosen.get('label', 'unknown')} "
-                f"from average retrieval {avg_retrieval:.2f}."
+            "reasoning": _build_rubric_reasoning(
+                item_name=item_name,
+                decision=decision,
+                level_label=str(chosen.get("label", "unknown")),
+                evidence_chunks=evidence_chunks,
+                avg_retrieval=avg_retrieval,
             ),
             "confidence": min(max(avg_retrieval, 0.25), 0.92),
             "manual_review_required": avg_retrieval < 0.55,
             "matched_evidence_spans": matched_evidence_spans,
         }
+
+
+def _build_binary_reasoning(
+    *,
+    item_name: str,
+    passed: bool,
+    avg_retrieval: float,
+    evidence_chunks: list[dict[str, Any]],
+) -> str:
+    evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
+    if passed:
+        return (
+            f"已检索到与“{item_name}”直接相关的证明材料，"
+            f"{evidence_summary}，可作为该评分项的支撑依据。"
+        )
+    if avg_retrieval >= 0.25:
+        return (
+            f"已检索到部分与“{item_name}”相关内容，"
+            f"{evidence_summary}，但关键信息完整性或对应性仍不足，建议人工复核。"
+        )
+    return (
+        f"当前检索到的内容与“{item_name}”关联度较弱，"
+        f"{evidence_summary}，暂不足以形成有效支撑。"
+    )
+
+
+def _build_tiered_reasoning(
+    *,
+    item_name: str,
+    score: float,
+    evidence_text: str,
+    evidence_chunks: list[dict[str, Any]],
+    fallback_reason: str,
+) -> str:
+    evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
+    if "国家级" in evidence_text or "national" in evidence_text.lower():
+        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含国家级奖项表述，可据此支持较高档评分。"
+    if "省级" in evidence_text or "provincial" in evidence_text.lower():
+        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含省级奖项表述，可据此支持对应档位评分。"
+    if "市级" in evidence_text or "地市级" in evidence_text or "city" in evidence_text.lower():
+        return f"已检索到与“{item_name}”相关的获奖材料，{evidence_summary}，其中包含市级奖项表述，可据此支持基础档位评分。"
+    if score > 0:
+        return f"已检索到与“{item_name}”相关的材料，{evidence_summary}，可支持该评分项的对应档位判断。"
+    return (
+        f"已检索到部分与“{item_name}”相关内容，{evidence_summary}，"
+        "但未发现足以明确奖项等级的关键信息，建议人工复核。"
+    )
+
+
+def _build_rubric_reasoning(
+    *,
+    item_name: str,
+    decision: str,
+    level_label: str,
+    evidence_chunks: list[dict[str, Any]],
+    avg_retrieval: float,
+) -> str:
+    evidence_summary = _summarize_evidence(evidence_chunks, max_count=2)
+    label_text = _normalize_level_label(level_label)
+    if decision == "pass":
+        return f"已检索到与“{item_name}”高度相关的内容，{evidence_summary}，材料完整性较好，可支撑{label_text}评价。"
+    if avg_retrieval >= 0.45:
+        return f"已检索到与“{item_name}”相关的主要内容，{evidence_summary}，能够形成一定支撑，但仍建议结合原文进行复核，暂按{label_text}评价。"
+    if avg_retrieval > 0.2:
+        return f"已检索到少量与“{item_name}”相关内容，{evidence_summary}，支撑力度有限，暂按{label_text}评价。"
+    return f"当前关于“{item_name}”的有效证据较少，{evidence_summary}，暂不足以形成稳定判断。"
+
+
+def _summarize_evidence(evidence_chunks: list[dict[str, Any]], *, max_count: int) -> str:
+    snippets: list[str] = []
+    for chunk in evidence_chunks[:max_count]:
+        text = _clean_text(str(chunk.get("text", "")))
+        source_file = str(chunk.get("source_file", "")).strip()
+        if not text and not source_file:
+            continue
+        if text:
+            snippet = f"如“{text[:32]}{'...' if len(text) > 32 else ''}”"
+        else:
+            snippet = "已有相关摘录"
+        if source_file:
+            snippet = f"{source_file}中的{snippet}"
+        snippets.append(snippet)
+
+    if not snippets:
+        return "当前尚未提取到可直接引用的证据摘录"
+    return "；".join(snippets)
+
+
+def _clean_text(text: str) -> str:
+    compact = " ".join(text.split())
+    return compact.strip("；;，,。.\n\r\t ")
+
+
+def _normalize_level_label(level_label: str) -> str:
+    label = level_label.strip().lower()
+    mapping = {
+        "high": "较高档次",
+        "medium": "中间档次",
+        "low": "基础档次",
+        "较高档": "较高档次",
+        "中档": "中间档次",
+        "低档": "基础档次",
+    }
+    return mapping.get(label, f"“{level_label.strip() or '当前'}”档次")
 
 
 def _extract_scalar(prompt: str, label: str) -> str:
