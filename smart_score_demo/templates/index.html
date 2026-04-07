@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ app_title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="page-bg"></div>
+  <main class="app">
+    <header class="hero">
+      <p class="hero-kicker">本地会议演示版</p>
+      <h1>{{ app_title }}</h1>
+      <p class="hero-subtitle">上传按钮仅模拟交互，打分结果由本地 mock 数据实时合并渲染</p>
+    </header>
+
+    <section class="action-panel card">
+      <div class="actions">
+        <button id="btn-upload-tender" class="btn">上传招标文件</button>
+        <button id="btn-upload-bid" class="btn">上传投标文件夹压缩包</button>
+        <button id="btn-run-score" class="btn btn-primary">开始智能打分</button>
+      </div>
+      <div class="status-row">
+        <div class="status-item">
+          <span class="status-label">招标文件状态</span>
+          <span id="status-tender" class="tag tag-pending">未就绪</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">投标文件状态</span>
+          <span id="status-bid" class="tag tag-pending">未就绪</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">任务状态</span>
+          <span id="status-run" class="tag tag-neutral">待执行</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="result-grid">
+      <article class="card empty-card">
+        <h2>结果展示区</h2>
+        <p>点击“开始智能打分”后展示本地读取结果。</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

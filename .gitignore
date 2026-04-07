@@ -20,3 +20,4 @@ output*.jpeg
 !sample_toubiao_files/mock_score_report.json
 !sample_toubiao_files/mock_ocr/
 !sample_toubiao_files/mock_ocr/*.ocr.json
+.codex
